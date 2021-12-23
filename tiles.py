@@ -157,6 +157,20 @@ class UndeadRoom(EnemyRoom):
             return """
         Undead was exterminated
         """
+class ReaperRoom(EnemyRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, enemies.Reaper())
+
+    def intro_text(self):
+        if self.enemy.is_alive():
+            sounds.zombie()
+            return """
+                The murderous reaper is here
+            """
+        else:
+            return """
+        Reaper was killed
+        """
 
 class FindDaggerRoom(LootRoom):
     def __init__(self, x, y):
