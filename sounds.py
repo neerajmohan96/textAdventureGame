@@ -15,3 +15,6 @@ def monster():
 
 def spider():
     winsound.PlaySound(os.path.abspath("spider.wav"), winsound.SND_FILENAME)
+
+def wolf():
+    winsound.PlaySound(os.path.abspath("wolf.wav"), winsound.SND_FILENAME)

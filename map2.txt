@@ -1,5 +1,5 @@
 |||LeaveCatacombs|
-||Passage|OgreRoom|
+||Passage|UndeadRoom|
 ||Passage||
 ||ReaperRoom|GanonRoom|
 ||FindSmallPotionRoom|EnterCatacombs|

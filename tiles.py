@@ -85,6 +85,17 @@ class Corridor(MapTile):
     def modify_player(self, player):
         #Room has no action on player
         pass
+
+
+class Passage(MapTile):
+    def intro_text(self):
+        return """
+        Crawl through the passage
+        """
+
+    def modify_player(self, player):
+        # Room has no action on player
+        pass
  
 class GiantSpiderRoom(EnemyRoom):
     def __init__(self, x, y):
@@ -108,6 +119,7 @@ class WolfRoom(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
+            sounds.wolf()
             return """
              A wolf jumps down in front of you!
              """
@@ -131,6 +143,20 @@ class GanonRoom(EnemyRoom):
         The ganon is dead
         """
 
+class UndeadRoom(EnemyRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, enemies.Undead())
+
+    def intro_text(self):
+        if self.enemy.is_alive():
+            sounds.zombie()
+            return """
+                A vicious undead is coming for you
+            """
+        else:
+            return """
+        Undead was exterminated
+        """
 
 class FindDaggerRoom(LootRoom):
     def __init__(self, x, y):
