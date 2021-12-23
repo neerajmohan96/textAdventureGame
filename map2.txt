@@ -1,5 +1,5 @@
 |||LeaveCatacombs|
-||EmptyCavePath|GiantSpiderRoom|
-||LootRoom||
-||WolfRoom||
-GiantSpiderRoom|FindSmallPotionRoom|EnterCatacombs|FindDaggerRoom
+||Passage|OgreRoom|
+||Passage||
+||ReaperRoom|GanonRoom|
+||FindSmallPotionRoom|EnterCatacombs|

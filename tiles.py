@@ -116,6 +116,21 @@ class WolfRoom(EnemyRoom):
              The corpse of a dead wolf is on the ground.
              """
 
+class GanonRoom(EnemyRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, enemies.Ganon())
+
+    def intro_text(self):
+        if self.enemy.is_alive():
+            sounds.monster()
+            return """
+            The mighty ganon has appeared
+            """
+        else:
+            return"""
+        The ganon is dead
+        """
+
 
 class FindDaggerRoom(LootRoom):
     def __init__(self, x, y):
@@ -172,3 +187,4 @@ class LeaveCatacombs(MapTile):
 
     def modify_player(self, player):
         player.victory = True
+
