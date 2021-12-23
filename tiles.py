@@ -27,16 +27,21 @@ class MapTile:
         """Returns all of the available actions in this room."""
         moves = self.adjacent_moves()
         moves.append(actions.ViewInventory())
+        moves.append(actions.Status())
+        moves.append(actions.Equip())
+        moves.append(actions.Heal())
  
         return moves
 
 
-class StartingRoom(MapTile):
+class EnterCathedral(MapTile):
     # override the intro_text method in the superclass
     def intro_text(self):
         return """
-        You find yourself in a cave with a flickering torch on the wall.
-        You can make out four paths, each equally as dark and foreboding.
+        Welcome to the Creepy Cathedral.
+        The Cathedral is fairly straightforward in layout, 
+        with large rooms of regular size connected by wide corridors 
+        but there is death hiding around the corners!!!.
         """
  
     def modify_player(self, player):
@@ -70,10 +75,10 @@ class EnemyRoom(MapTile):
         else:
             return self.adjacent_moves()
 
-class EmptyCavePath(MapTile):
+class Corridor(MapTile):
     def intro_text(self):
         return """
-        Another unremarkable part of the cave. You must forge onwards.
+        Another wide corridor. You must forge onwards.
         """
  
     def modify_player(self, player):
@@ -120,7 +125,16 @@ class FindDaggerRoom(LootRoom):
         It's a dagger! You pick it up.
         """
 
-class LeaveCaveRoom(MapTile):
+# class FindSmallPotionRoom(LootRoom):
+#     def __init__(self, x, y):
+#         super().__init__(x, y, items.SmallPotion())
+#
+#     def intro_text(self):
+#         return """
+#         You have a found a small healing potion.
+#         """
+
+class LeaveCathedral(MapTile):
     def intro_text(self):
         return """
         You see a bright light in the distance...
@@ -132,3 +146,4 @@ class LeaveCaveRoom(MapTile):
  
     def modify_player(self, player):
         player.victory = True
+

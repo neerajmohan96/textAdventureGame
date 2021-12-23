@@ -1,0 +1,5 @@
+|||LeaveCathedral|
+||Corridor|GiantSpiderRoom|
+||Corridor||
+||WolfRoom||
+GiantSpiderRoom|Corridor|EnterCathedral|Corridor|FindDaggerRoom

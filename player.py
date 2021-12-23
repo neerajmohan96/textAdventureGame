@@ -5,10 +5,15 @@ class Player():
     def __init__(self):
         self.inventory = [items.Gold(15), items.Pillow(), items.Rock()] #Inventory on startup
         self.hp = 100 # Health Points
+        self.maxHp = 100
         self.location_x, self.location_y = world.starting_position  #(0, 0)
         self.victory = False #no victory on start up
         self.gold = 15
-        self.currentWpn = "Nothing"
+        self.currentWpn = self.inventory[1]
+        self.experience = 0
+        self.level = 1
+        self.nextLevelUp = 10
+
 
     def flee(self, tile):
         """Moves the player randomly to an adjacent tile"""
@@ -63,9 +68,10 @@ class Player():
                 action_method(**kwargs)
 
     def status(self):
-         print("\nHP : ".self.hp)
-         print("\nGold : ".self.gold)
-         print("\nCurrent Weapon : ".self.currentWpn)
+         print("\nHP : {}/".format(self.hp), "{}".format(self.maxHp))
+         print("Gold : {}".format(self.gold))
+         print("XP : {}".format(self.experience))
+         print("Current Weapon : {}".format(self.currentWpn))
 
     def equip(self):
         print("\nThese are weapons currently possessed.\n")
@@ -124,3 +130,12 @@ class Player():
 
     def healToPlayer(self, itemChoice, potionList):
         chosenPotion = potionList[itemChoice]
+        print("\nYou were healed for {} HP".format(chosenPotion.heal))
+        self.hp = self.hp + chosenPotion.heal
+        chosenPotion.amt = chosenPotion.amt - 1
+        if chosenPotion.amt == 0:
+            self.inventory.remove(chosenPotion)
+            # sounds.drink()
+            time.sleep(3)
+            if self.maxHp < self.hp:
+                self.hp = self.maxHp

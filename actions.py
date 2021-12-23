@@ -45,15 +45,15 @@ class Flee(Action):
         super().__init__(method=Player.flee, name="Flee", hotkey='f', tile=tile)
 
 class Status(Action):
-    def __init__(self, tile):
+    def __init__(self):
         super().__init__(method=Player.status, name="Status", hotkey='S')
 
 class Heal(Action):
-    def __init__(self, tile):
-        super().__init__(method=Player.heal, name="Status", hotkey='H')
+    def __init__(self):
+        super().__init__(method=Player.heal, name="Heal", hotkey='H')
 
 class Equip(Action):
-    def __init__(self, tile):
-        super().__init__(method=Player.equip, name="Status", hotkey='E')
+    def __init__(self):
+        super().__init__(method=Player.equip, name="Equip", hotkey='E')
 
 

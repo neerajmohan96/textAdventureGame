@@ -56,3 +56,10 @@ class Potion(Item):
                          description="Heal yourself",
                          value=self.amt,
                          heal=self.heal)
+
+class SmallPotion(Potion):
+    def __init__(self):
+        super().__init__(name="Small Potion",
+                         description="A small potion",
+                         value=5,
+                         heal=20)

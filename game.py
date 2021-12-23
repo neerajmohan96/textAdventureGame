@@ -12,7 +12,7 @@ def play():
         room.modify_player(player)
         # Check again since the room could have changed the player's state
         if player.is_alive() and not player.victory:
-            print("Choose an action:\n")
+            print("Choose an action")
             available_actions = room.available_actions()
             for action in available_actions:
                 print(action)

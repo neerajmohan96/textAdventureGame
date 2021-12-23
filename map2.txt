@@ -1,5 +1,5 @@
-			LeaveCaveRoom	
-		EmptyCavePath	GiantSpiderRoom	
-		EmptyCavePath		
-		WolfRoom		
-GiantSpiderRoom	EmptyCavePath	StartingRoom	EmptyCavePath	FindDaggerRoom
+|||LeaveCatacombs|
+||EmptyCavePath|GiantSpiderRoom|
+||LootRoom||
+||WolfRoom||
+GiantSpiderRoom|FindSmallPotionRoom|EnterCatacombs|FindDaggerRoom

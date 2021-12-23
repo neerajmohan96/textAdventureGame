@@ -1,0 +1,5 @@
+|||LeaveCave|
+||EmptyCavePath|GiantSpiderRoom|
+||EmptyCavePath||
+||WolfRoom||
+GiantSpiderRoom|EmptyCavePath|EnterCave|EmptyCavePath|FindDaggerRoom
