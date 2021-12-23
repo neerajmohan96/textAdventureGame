@@ -127,14 +127,16 @@ class FindDaggerRoom(LootRoom):
         It's a dagger! You pick it up.
         """
 
-# class FindSmallPotionRoom(LootRoom):
-#     def __init__(self, x, y):
-#         super().__init__(x, y, items.SmallPotion())
-#
-#     def intro_text(self):
-#         return """
-#         You have a found a small healing potion.
-#         """
+class SmallPotionRoom(LootRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, items.SmallPotion())
+
+    def intro_text(self):
+        return """
+        You have a found a small healing potion.
+        """
+    def modify_player(self, player):
+        player.inventory.append(self.item)
 
 class LeaveCathedral(MapTile):
     def intro_text(self):

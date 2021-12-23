@@ -2,4 +2,4 @@
 ||Corridor|GiantSpiderRoom|
 ||Corridor||
 ||WolfRoom||
-GiantSpiderRoom|Corridor|EnterCathedral|Corridor|FindDaggerRoom
+GiantSpiderRoom|SmallPotionRoom|EnterCathedral|Corridor|FindDaggerRoom

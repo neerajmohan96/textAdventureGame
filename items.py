@@ -51,13 +51,12 @@ class Pillow(Weapon):
 class Potion(Item):
     def __init__(self, name, description, value, heal):
         self.name = name
-        self.description
+        self.description = description
         self.value = value
         self.heal = heal
-        super().__init__(name="Potion",
-                         description="Heal yourself",
-                         value=self.amt,
-                         heal=self.heal)
+        super().__init__(name, description, value)
+    def __str__(self):
+        return "{}\n=====\n{}\nValue: {}\nHeal: {}".format(self.name, self.description, self.value, self.heal)
 
 class SmallPotion(Potion):
     def __init__(self):
