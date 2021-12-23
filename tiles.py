@@ -1,4 +1,5 @@
 ﻿import items, enemies, actions, world
+import sounds
  
 class MapTile:
     def __init__(self, x, y):
@@ -91,6 +92,7 @@ class GiantSpiderRoom(EnemyRoom):
  
     def intro_text(self):
         if self.enemy.is_alive():
+            sounds.spider()
             return """
             A giant spider jumps down from its web in front of you!
             """
@@ -137,13 +139,34 @@ class FindDaggerRoom(LootRoom):
 class LeaveCathedral(MapTile):
     def intro_text(self):
         return """
+        A huge door welcomes you...
+        Yes you have made it to the end
+        Congratulations ...
+        """
+ 
+    def modify_player(self, player):
+        player.victory = True
+
+
+class EnterCatacombs(MapTile):
+    def intro_text(self):
+        return """
+       This area is more difficult than the Cathedral.
+        The Catacombs are very dark, and the room layout is convoluted and confusing
+        """
+
+    def modify_player(self, player):
+        player.victory = True
+
+class LeaveCatacombs(MapTile):
+    def intro_text(self):
+        return """
         You see a bright light in the distance...
         ... it grows as you get closer! It's sunlight!
  
  
         Victory is yours!
         """
- 
+
     def modify_player(self, player):
         player.victory = True
-

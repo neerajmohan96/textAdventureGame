@@ -49,9 +49,11 @@ class Pillow(Weapon):
                          damage=1)
 
 class Potion(Item):
-    def __init__(self, heal, amt):
+    def __init__(self, name, description, value, heal):
+        self.name = name
+        self.description
+        self.value = value
         self.heal = heal
-        self.amt = amt
         super().__init__(name="Potion",
                          description="Heal yourself",
                          value=self.amt,
