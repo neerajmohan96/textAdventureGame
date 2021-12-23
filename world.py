@@ -1,9 +1,9 @@
 _world = {}
 starting_position = (0, 0)
  
-def load_tiles():
+def load_tiles(file):
     """Parses a file that describes the world space into the _world object"""
-    with open('map1.txt', 'r') as f:
+    with open(file, 'r') as f:
         rows = f.readlines()
     x_max = len(rows[0].split('|')) # Assumes all rows contain the same number of tabs
     for y in range(len(rows)):

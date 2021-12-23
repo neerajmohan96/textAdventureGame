@@ -2,4 +2,4 @@
 ||Passage|UndeadRoom|
 ||Passage||
 ||ReaperRoom|GanonRoom|
-||FindSmallPotionRoom|EnterCatacombs|
+||SmallPotionRoom|EnterCatacombs|
