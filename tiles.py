@@ -163,7 +163,7 @@ class ReaperRoom(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            sounds.zombie()
+            sounds.reaper()
             return """
                 The murderous reaper is here
             """
@@ -175,7 +175,7 @@ class ReaperRoom(EnemyRoom):
 class FindDaggerRoom(LootRoom):
     def __init__(self, x, y):
         super().__init__(x, y, items.Dagger())
- 
+
     def intro_text(self):
         return """
         Your notice something shiny in the corner.
